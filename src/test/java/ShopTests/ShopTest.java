@@ -57,4 +57,12 @@ public class ShopTest {
         shop.removeFromStock(piano);
         assertEquals(1, shop.getStock().size());
     }
+
+    @Test
+    public void calculateTotalPotentialProfit(){
+        shop.addToStock(piano);
+        shop.addToStock(drumSticks);
+        shop.removeFromStock(piano);
+        assertEquals(5.00, shop.calculatePotentialProfit(),0);
+    }
 }

@@ -22,15 +22,35 @@ public class Shop {
         return stock;
     }
 
-    public void addToStock(ISell item){
-        stock.add(item);
+    public void addToStock(ISell product){
+        stock.add(product);
     }
 
-    public boolean removeFromStock(ISell item){
-        return stock.remove(item);
+    public void removeFromStock(ISell product){
+        stock.remove(product);
     }
 
+//    calculate all potential profit
+//    for each item in ISell add MARKUP
+
+    public double calculatePotentialProfit(){
+        double totalProfit = 0;
+        for (ISell product : stock){
+            totalProfit += product.calculateMarkup();
+        }
+        return totalProfit;
+
+    }
 
 }
 
 //has an array of items of type ISell
+//
+
+
+//    double weightTotal = 0;
+//        for(PieceOfRubbish pieceOfRubbish : allRubbish ){
+//                weightTotal += pieceOfRubbish.getWeight();
+//                }
+//                return weightTotal;
+//                }
